@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('./Web advanced/Web-advanced-week5/app');
+var app = require('../app');
 var debug = require('debug')('web-advanced-week5:server');
 var http = require('http');
 
