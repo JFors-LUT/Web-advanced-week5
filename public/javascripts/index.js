@@ -32,53 +32,61 @@ addInstructionButton.addEventListener('click', () => {
 
 submitButton.addEventListener('click', () => {
   
-const name = document.getElementById('name-text').value;
-const data = {
-  name,
-  ingredients,
-  instructions,
-};
-console.log(data)
-fetch('/recipe/', {
-  method: 'POST',
-  body: JSON.stringify(data),
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
+  const name = document.getElementById('name-text').value;
 
-   
-    const formData = new FormData();
-    const files = imageInput.files;
-
-    if(files.length>0){
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
-      formData.append('images', file);
-    }
-
-    fetch('/images', {
-      method: 'POST',
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        // Clear the form
-        imageForm.reset();
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-    }
-  })
-  
-  .catch((error) => {
-    console.error('Error:', error);
+  const categories = [];
+  const categoryCheckboxes = document.querySelectorAll('input[name="categories"]:checked');
+  categoryCheckboxes.forEach((checkbox) => {
+    categories.push(checkbox.value);
   });
+
+  const data = {
+    name,
+    ingredients,
+    instructions,
+    categories,
+  };
+  console.log(data)
+  fetch('/recipe/', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+    
+      const formData = new FormData();
+      const files = imageInput.files;
+
+      if(files.length>0){
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        formData.append('images', file);
+      }
+
+      fetch('/images', {
+        method: 'POST',
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          // Clear the form
+          imageForm.reset();
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      }
+    })
+    
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 
 });
 

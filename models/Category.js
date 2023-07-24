@@ -3,9 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 let categorySchema = new Schema ({
-    name: String,
-    instructions: Array,
-    ingredients: Array
+    name : String
 });
 
 module.exports = mongoose.model("Category", categorySchema)

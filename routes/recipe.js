@@ -98,7 +98,8 @@ router.post('/', (req, res, next) => {
         return Recipe.create({
           name: food,
           instructions: req.body.instructions,
-          ingredients: req.body.ingredients
+          ingredients: req.body.ingredients,
+          categories: req.body.categories
         });
       } else {
         return Promise.reject('Recipe already in database.');
