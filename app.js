@@ -14,7 +14,7 @@ const db = mongoose.connection;
 //define routes
 const recipeRouter = require('./routes/recipe');
 const imagesRouter = require('./routes/images');
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 db.on("Error", console.error.bind(console, "MongoDB connection error"));
 
