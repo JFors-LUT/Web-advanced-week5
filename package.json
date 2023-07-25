@@ -40,5 +40,8 @@
   "bugs": {
     "url": "https://github.com/JFors-LUT/Web-advanced-week5/issues"
   },
-  "homepage": "https://github.com/JFors-LUT/Web-advanced-week5#readme"
+  "homepage": "https://github.com/JFors-LUT/Web-advanced-week5#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  }
 }
