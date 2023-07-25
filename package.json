@@ -2,7 +2,7 @@
   "name": "vanilla",
   "version": "1.0.0",
   "description": "JavaScript example starter project",
-  "main": "index.html",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "build": "parcel build public/index.ejs"
@@ -11,14 +11,12 @@
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "jade": "^1.11.0",
     "materialize": "^1.0.0",
     "materialize-css": "^1.0.0",
     "mongodb": "^5.7.0",
     "mongoose": "^7.4.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
-    "node": "^20.5.0",
     "parcel-bundler": "^1.6.1"
   },
   "devDependencies": {
