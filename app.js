@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
   res.render('index', { response: responseBody });
 });
 
-app.listen(PORT, () => console.log(`Server started on port `+PORT));
+app.listen(() => console.log(`Server started on port `));
 
 
 module.exports = app;
