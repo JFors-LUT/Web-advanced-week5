@@ -4,7 +4,7 @@
   "description": "JavaScript example starter project",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node bin/www",
     "build": "parcel build public/index.ejs"
   },
   "dependencies": {
